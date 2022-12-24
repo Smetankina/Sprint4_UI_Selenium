@@ -1,4 +1,4 @@
-package scootertests.Chrome;
+package scootertests;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -31,10 +31,10 @@ public class OrderPageTestParameterized extends TestBase {
     // Тестовые данные
     @Parameterized.Parameters
     public static Object[][] doOrder() {
-        return new Object[][] {
-                { "Иван", "Иванов","Зеленая, 15","12345678912" ,"12.12.2020","корректный ввод",true},
-                { "Петр", "Петров","Зеленая, 15","12345678912" ,"12.12.2025","корректный ввод",true},
-                { "Петр", "Петров","notvalid","12345678912" ,"12.12.2025","некорректный ввод",false},
+        return new Object[][]{
+                {"Иван", "Иванов", "Зеленая, 15", "12345678912", "12.12.2020", "корректный ввод", true},
+                {"Петр", "Петров", "Зеленая, 15", "12345678912", "12.12.2025", "корректный ввод", true},
+                {"Петр", "Петров", "notvalid", "12345678912", "12.12.2025", "некорректный ввод", false},
         };
     }
 
@@ -61,9 +61,9 @@ public class OrderPageTestParameterized extends TestBase {
                 .clickYesButton()
                 .isOrderIsDoneDisplayed();
 
-        OrderPageClass orderPageClass =new OrderPageClass(driver);
-        boolean   isDisplayed = orderPageClass.isOrderIsDoneDisplayed();
-        assertTrue("Окно Заказ Оформлен не отображено",isDisplayed);
+        OrderPageClass orderPageClass = new OrderPageClass(driver);
+        boolean isDisplayed = orderPageClass.isOrderIsDoneDisplayed();
+        assertTrue("Окно Заказ Оформлен не отображено", isDisplayed);
 
 
     }

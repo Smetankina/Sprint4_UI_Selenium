@@ -1,4 +1,4 @@
-package scootertests.Chrome;
+package scootertests;
 
 import org.junit.Test;
 import ru.yandex.practikum.HomePageClass;
@@ -11,7 +11,7 @@ public class OrderPageTest extends TestBase {
 
     @Test
 
-    public void test() {
+    public void positiveOrderTest() {
 
         new HomePageClass(driver)
                 .openPage()
@@ -32,9 +32,9 @@ public class OrderPageTest extends TestBase {
                 .clickYesButton()
                 .isOrderIsDoneDisplayed();
 
-        OrderPageClass orderPageClass =new OrderPageClass(driver);
-             boolean   isDisplayed = orderPageClass.isOrderIsDoneDisplayed();
-        assertTrue("Окно Заказ Оформлен не отображено",isDisplayed);
+        OrderPageClass orderPageClass = new OrderPageClass(driver);
+        boolean isDisplayed = orderPageClass.isOrderIsDoneDisplayed();
+        assertTrue("Окно Заказ Оформлен не отображено", isDisplayed);
 
 
     }

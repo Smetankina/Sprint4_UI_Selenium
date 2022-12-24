@@ -4,11 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.List;
 
 public class HomePageClass {
 
@@ -30,39 +25,37 @@ public class HomePageClass {
     //кнопка Заказать в ThirdPart
     private By orderButtonInEnd = By.className("Button_Button__ra12g Button_Middle__1CSJM");
     //0 Кликнуть на "Сколько это стоит?И как оплатить?" By.id="accordion__heading-0"
-    private By List0 = By.id("accordion__heading-0");
+    private By howMuchCostQuestion = By.id("accordion__heading-0");
     //Сутки — 400 рублей. Оплата курьеру — наличными или картой.
-    private By textList0 = By.xpath(".//*[@id='accordion__panel-0']/p");
+    private By howMuchCostAnswer = By.xpath(".//*[@id='accordion__panel-0']/p");
     //1 Хочу сразу несколько самокатов! Так можно?
-    private By List1 = By.id("accordion__heading-1");
+    private By iWantFewQuestion = By.id("accordion__heading-1");
     //Пока что у нас так: один заказ — один самокат. Если хотите покататься с друзьями, можете просто сделать несколько заказов — один за другим.
-    private By textList1 = By.xpath(".//*[@id='accordion__panel-1']/p");
+    private By iWantFewAnswer = By.xpath(".//*[@id='accordion__panel-1']/p");
     //2 Как рассчитывается время аренды?
-    private By List2 = By.id("accordion__heading-2");
+    private By howCalculateRentTimeQuestion = By.id("accordion__heading-2");
     //Допустим, вы оформляете заказ на 8 мая. Мы привозим самокат 8 мая в течение дня. Отсчёт времени аренды начинается с момента, когда вы оплатите заказ курьеру. Если мы привезли самокат 8 мая в 20:30, суточная аренда закончится 9 мая в 20:30.
-    private By textList2 = By.xpath(".//*[@id='accordion__panel-2']/p");
+    private By howCalculateRentTimeAnswer = By.xpath(".//*[@id='accordion__panel-2']/p");
     //3 Можно ли заказать самокат прямо на сегодня?
-    private By List3 = By.id("accordion__heading-3");
+    private By canIRentTodayQuestion = By.id("accordion__heading-3");
     //Только начиная с завтрашнего дня. Но скоро станем расторопнее.
-    private By textList3 = By.xpath(".//*[@id='accordion__panel-3']/p");
+    private By canIRentTodayAnswer = By.xpath(".//*[@id='accordion__panel-3']/p");
     //4 Можно ли продлить заказ или вернуть самокат раньше?
-    private By List4 = By.id("accordion__heading-4");
+    private By canIChangeRentTimeQuestion = By.id("accordion__heading-4");
     //Пока что нет! Но если что-то срочное — всегда можно позвонить в поддержку по красивому номеру 1010.
-    private By textList4 = By.xpath(".//*[@id='accordion__panel-4']/p");
+    private By canIChangeRentTimeAnswer = By.xpath(".//*[@id='accordion__panel-4']/p");
     //5 Вы привозите зарядку вместе с самокатом?
-    private By List5 = By.id("accordion__heading-5");
+    private By aboutChargeQuestion = By.id("accordion__heading-5");
     //Самокат приезжает к вам с полной зарядкой. Этого хватает на восемь суток — даже если будете кататься без передышек и во сне. Зарядка не понадобится.
-    private By textList5 = By.xpath(".//*[@id='accordion__panel-5']/p");
+    private By aboutChargeAnswer = By.xpath(".//*[@id='accordion__panel-5']/p");
     //6 Можно ли отменить заказ?
-    private By List6 = By.id("accordion__heading-6");
+    private By canICancelOrderQuestion = By.id("accordion__heading-6");
     // Да, пока самокат не привезли. Штрафа не будет, объяснительной записки тоже не попросим. Все же свои.''
-    private By textList6 = By.xpath(".//*[@id='accordion__panel-6']/p");
+    private By canICancelOrderAnswer = By.xpath(".//*[@id='accordion__panel-6']/p");
     //7 Я жизу за МКАДом, привезёте?
-    private By List7 = By.id("accordion__heading-7");
+    private By beyondTheMKADQuestion = By.id("accordion__heading-7");
     // Да, обязательно. Всем самокатов! И Москве, и Московской области.
-    private By textList7 = By.xpath(".//*[@id='accordion__panel-7']/p");
-
-
+    private By beyondTheMKADAnswer = By.xpath(".//*[@id='accordion__panel-7']/p");
 
 
     //метод для клика по кнопке Заказать в Хедере
@@ -78,108 +71,104 @@ public class HomePageClass {
 
 
     // методы для клика по элементам в списке
-    public HomePageClass clickList0() {
-        //new WebDriverWait(driver, 10)
-      //          .until(ExpectedConditions.elementToBeClickable(textList0));
+    public HomePageClass clickHowMuchCostQuestion() {
 
-        driver.findElement(List0).click();
+
+        driver.findElement(howMuchCostQuestion).click();
 
         return this;
 
     }
 
 
+    public HomePageClass clickIWantFewQuestion() {
 
-
-
-    public HomePageClass clickList1() {
-
-        driver.findElement(List1).click();
+        driver.findElement(iWantFewQuestion).click();
 
         return this;
     }
 
-    public HomePageClass clickList2() {
+    public HomePageClass clickHowCalculateRentTimeQuestion() {
 
-        driver.findElement(List2).click();
+        driver.findElement(howCalculateRentTimeQuestion).click();
         return this;
     }
 
-    public HomePageClass clickList3() {
+    public HomePageClass clickCanIRentTodayQuestion() {
 
-        driver.findElement(List3).click();
+        driver.findElement(canIRentTodayQuestion).click();
         return this;
     }
 
-    public HomePageClass clickList4() {
+    public HomePageClass clickCanIChangeRentTimeQuestion() {
 
-        driver.findElement(List4).click();
+        driver.findElement(canIChangeRentTimeQuestion).click();
         return this;
     }
 
-    public HomePageClass clickList5() {
+    public HomePageClass clickAboutChargeQuestion() {
 
-        driver.findElement(List5).click();
+        driver.findElement(aboutChargeQuestion).click();
         return this;
     }
 
-    public HomePageClass clickList6() {
+    public HomePageClass clickCanICancelOrderQuestion() {
 
-        driver.findElement(List6).click();
+        driver.findElement(canICancelOrderQuestion).click();
         return this;
     }
 
-    public HomePageClass clickList7() {
+    public HomePageClass clickBeyondTheMKADQuestion() {
 
-        driver.findElement(List7).click();
+        driver.findElement(beyondTheMKADQuestion).click();
         return this;
     }
 
     // метод для получения текста элемента в списке
-    public String getTextList0() {
+    public String getHowMuchCostAnswer() {
 
-      return   driver.findElement(textList0).getText();
+        return driver.findElement(howMuchCostAnswer).getText();
 
     }
 
-    public String getTextList1() {
+    public String getiWantFewAnswer() {
 
-        return driver.findElement(textList1).getText();
+        return driver.findElement(iWantFewAnswer).getText();
     }
 
-    public String getTextList2() {
+    public String getHowCalculateRentTimeAnswer() {
 
-        return driver.findElement(textList2).getText();
+        return driver.findElement(howCalculateRentTimeAnswer).getText();
     }
 
-    public String getTextList3() {
+    public String getCanIRentTodayAnswer() {
 
-        return driver.findElement(textList3).getText();
+        return driver.findElement(canIRentTodayAnswer).getText();
     }
 
-    public String getTextList4() {
+    public String getCanIChangeRentTimeAnswer() {
 
-        return driver.findElement(textList4).getText();
+        return driver.findElement(canIChangeRentTimeAnswer).getText();
     }
 
-    public String getTextList5() {
+    public String getAboutChargeAnswer() {
 
-        return driver.findElement(textList5).getText();
+        return driver.findElement(aboutChargeAnswer).getText();
     }
 
-    public String getTextList6() {
+    public String getCanICancelOrderAnswer() {
 
-        return driver.findElement(textList6).getText();
+        return driver.findElement(canICancelOrderAnswer).getText();
     }
 
-    public String getTextList7() {
+    public String getBeyondTheMKADAnswer() {
 
-        return driver.findElement(textList7).getText();
+        return driver.findElement(beyondTheMKADAnswer).getText();
     }
     //метод для прокрутки страницы до элемента
 
     public HomePageClass scrollPage() {
-        WebElement element = driver.findElement(List0);
+        WebElement element = driver.findElement(howMuchCostQuestion);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
         return this;
     }

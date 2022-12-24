@@ -3,9 +3,6 @@ package ru.yandex.practikum;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class OrderPageClass {
 
@@ -26,6 +23,8 @@ public class OrderPageClass {
     private By dateField = By.xpath(".//input[@placeholder='* Когда привезти самокат']");
     //Срок аренды
     private By rentPeriodField = By.className("Dropdown-placeholder");
+    //Значение сутки в выпадающем списке Срок аренды
+    private By rentForADay = By.xpath(".//*[(@role ='option' and text()='сутки')]");
     //Цвет самоката черный чек-бокс
     private By checkBoxBlackColour = By.xpath(".//input[@id='black']");
     //Цвет самоката серый чек-бокс
@@ -44,12 +43,6 @@ public class OrderPageClass {
         this.driver = driver;
     }
 
-
-    public OrderPageClass waitPageLoad() {
-        new WebDriverWait(driver, 5)
-                .until(ExpectedConditions.visibilityOfAllElements());
-        return this;
-    }
 
     //Ввод в поле Имя
     public OrderPageClass setNameField(String name) {
@@ -103,7 +96,7 @@ public class OrderPageClass {
     //Срок аренды
     public OrderPageClass clickRentPeriod() {
         driver.findElement(rentPeriodField).click();
-        driver.findElement(By.xpath(".//*[(@role ='option' and text()='сутки')]")).click();
+        driver.findElement(rentForADay).click();
         return this;
     }
 
@@ -140,7 +133,7 @@ public class OrderPageClass {
     //Окно Заказ Оформлен
     public boolean isOrderIsDoneDisplayed() {
         return driver.findElement(orderIsDone).isDisplayed();
-         }
+    }
 
 
 }
